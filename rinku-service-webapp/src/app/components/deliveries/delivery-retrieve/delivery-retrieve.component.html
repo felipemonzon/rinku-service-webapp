@@ -1,0 +1,82 @@
+<div class="container card shadow-lg mt-3">
+    <div class="col-12 mt-3">
+        <h2 class="title text-center text-capitalize font-weight-bold mt-3">Entregas Diarias</h2>
+        <hr>
+        <div class="form-group row">
+            <h2 class="col-12 h5 text-center text-capitalize">Buscar</h2>
+            <hr>
+            <div class="offset-lg-2 col-12 col-lg-8 text-center">
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" class="custom-control-input" id="findAll" name="by" value="findAll" autocomplete="off" [checked]="true" (change)="radioChangeHandler($event)">
+                    <label class="custom-control-label" for="findAll">Buscar Todas</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" class="custom-control-input" id="byEmployee" name="by" value="byEmployee" autocomplete="off" (change)="radioChangeHandler($event)">
+                    <label class="custom-control-label" for="byEmployee">Num.Empleado</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" class="custom-control-input" id="byInvoiceBranch" name="by" value="byInvoiceBranch" autocomplete="off" (change)="radioChangeHandler($event)">
+                    <label class="custom-control-label" for="byInvoiceBranch">Folio</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-lg-3 col-lg-8">
+                <div class="row">
+                    <div class="offset-lg-1 col-lg-6" id="bySearch">
+                        <div class="form-group ">
+                            <input type="text" class="form-control text-center" #search autocomplete="off" [disabled]="true">
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-primary" #btnSearch disabled="disabled" (click)="searchBy()">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-end mb-3 ml-auto">
+                <button type="button" id="btnAdd" class="btn btn-primary mb-1" (click)="openModal()">
+                    <span class="fa fa-plus"></span>
+                </button>
+            </div>
+            <!-- End search -->
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered bg-blue">
+                    <caption>Lista de Entregas</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center text-uppercase">Número Empleado</th>
+                            <th scope="col" class="text-center text-uppercase">Folio</th>
+                            <th scope="col" class="text-center text-uppercase">Fecha Registro</th>
+                            <th scope="col" class="text-center text-uppercase">Entregas</th>
+                            <th scope="col" class="text-center text-uppercase">Rol Asignado</th>
+                            <th scope="col" class="text-center text-uppercase" colspan="2">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngIf="deliveries.length === 0">
+                            <td colspan="9" class="text-center">No hay Entregas Registradas el Día de Hoy</td>
+                        </tr>
+                        <tr *ngFor="let delivery of deliveries | slice: (page-1) * pageSize : page * pageSize">
+                            <td class="d-none">{{delivery.idDelivery}}</td>
+                            <td class="text-uppercase text-center">{{delivery.employeeNumber}}</td>
+                            <td class="text-uppercase text-center">{{delivery.invoiceBranch}}</td>
+                            <td class="text-uppercase text-center">{{delivery.registrationDate}}</td>
+                            <td class="text-uppercase text-center">{{delivery.deliveries}}</td>
+                            <td class="text-uppercase text-center">{{delivery.assignedRolDescription}}</td>
+                            <td class="d-none">{{delivery.assignedRol}}</td>
+                            <td class="text-center">
+                                <span class="fa fa-edit text-primary mr-4 btnUpdate" (click)="updateDelivery(delivery.invoiceBranch)"></span>
+                                <span class="fa fa-trash text-danger btnDelete" (click)="deleteDelivery(delivery.invoiceBranch)"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ngb-pagination class="d-flex justify-content-center font-weight-bold" [(page)]="page" [pageSize]="pageSize" [collectionSize]="deliveries.length"></ngb-pagination>
+            </div>
+        </div>
+    </div>
+</div>

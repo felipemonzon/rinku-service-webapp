@@ -1,0 +1,38 @@
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="offset-xl-1 col-12 col-sm-12 col-xl-10">
+            <div class="card shadow-lg">
+                <div class="card-title mt-3">
+                    <h2 class="title text-center text-capitalize font-weight-bold">
+                        Bienvenido
+                    </h2>
+                </div>
+                <hr>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-5 ml-lg-5 mb-3">
+                            <div class="card bg-blue-darken-3" data-toggle="tooltip" title="Admin Empleados">
+                                <a class="text-decoration-none" [routerLink]="['/home/employees/']">
+                                    <div class="card-body text-white text-center ">
+                                        <img [src]=" 'assets/groups.png' " alt=" " height="87 " width="100 " />
+                                        <h3>Empleados</h3>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 ml-lg-5 mb-3 ">
+                            <div class="card bg-blue-darken-3 " data-toggle="tooltip " title="Entregas Diarias ">
+                                <a class="text-decoration-none " [routerLink]="['/home/deliveries/']">
+                                    <div class="card-body text-white text-center ">
+                                        <img [src]=" 'assets/package.png' " alt=" " height="87 " width="100 " />
+                                        <h3>Entregas</h3>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,229 @@
+/*
+Iconos diseñados por www.flaticon.es
+*/
+
+body {
+    /* 	height: 100% !important; */
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+    position: relative;
+    top: 0;
+    height: 100vh;
+}
+
+body[data-color="brown"] {
+    background-color: #f0f8ff;
+}
+
+body[data-color="blue"] {
+    background-color: #fafafa;
+}
+
+.title {
+    color: #0d47a1;
+    text-shadow: -5px 5px 0 rgba(39, 39, 39, .1);
+}
+
+h2.title {
+    text-shadow: -5px 6px 5px rgba(39, 39, 39, .1);
+}
+
+
+/* ---------------------
+    BACKGROUND STYLE
+------------------------ */
+
+.bg-blue-darken-2 {
+    background-color: #64b5f6;
+}
+
+.bg-blue-lighten-1 {
+    background-color: #42a5f5;
+}
+
+.bg-blue-darken-3 {
+    background-color: #1565c0;
+}
+
+.bg-blue-darken-4 {
+    background-color: #0d47a1;
+}
+
+
+/* ---------------------
+    COLORS
+------------------------ */
+
+.color-green {
+    color: #25D366;
+}
+
+.color-red {
+    color: #F6653C;
+}
+
+
+/* ---------------------
+    NAVBAR
+------------------------ */
+
+.navbar.navbar-color {
+    background-color: #102c54 !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.nav-title {
+    font-size: 24px;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #fff;
+}
+
+
+/* ---------------------
+    CARD STYLE
+------------------------ */
+
+.card {
+    border-radius: .5rem;
+    position: relative;
+    width: 100%;
+    box-shadow: 0 1px 15px 1px rgba(39, 39, 39, .1);
+    -webkit-box-shadow: 0 1px 15px 1px rgba(39, 39, 39, 0.1);
+}
+
+.card .card-body {
+    padding: 15px 10px 10px 10px;
+}
+
+.card-img img {
+    position: absolute;
+    top: -25px;
+    height: 150px;
+    max-width: 180px;
+    border-radius: .25rem;
+    -webkit-transform: translate(-50%, -30%);
+    transform: translate(-50%, -30%);
+    position: absolute;
+    left: 50%;
+    transition: all .15s ease;
+    box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07) !important;
+}
+
+
+/* ---------------------
+    FOOTER STYLE
+------------------------ */
+
+footer {
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+}
+
+.footer a {
+    color: inherit;
+    padding: 0.5rem;
+    font-size: 0.8571em;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: none;
+}
+
+.footer.fixed-bottom {
+    width: calc(100% - 80px);
+    margin-left: auto;
+}
+
+.footer .copyright {
+    font-size: 0.8571em;
+    line-height: 1.8;
+}
+
+.footer:after {
+    display: table;
+    clear: both;
+    content: " ";
+}
+
+
+/* ---------------------
+    MARGINS -- PADING
+------------------------ */
+
+.mt-6 {
+    margin-top: 6rem;
+}
+
+.mt-7 {
+    margin-top: 7.5rem;
+}
+
+.mt-12 {
+    margin-top: 12.5rem;
+}
+
+.mt-18 {
+    margin-top: 18rem;
+}
+
+.pt-6 {
+    margin-top: 5rem;
+}
+
+
+/* ---------------------
+    TABLE
+------------------------ */
+
+table {
+    box-shadow: 0 1px 15px 1px rgba(39, 39, 39, .1);
+    -webkit-box-shadow: 0 1px 15px 1px rgba(39, 39, 39, 0.1);
+}
+
+.table thead tr th:first-child {
+    border-top-left-radius: 5px !important;
+}
+
+.table thead tr th:last-child {
+    border-top-right-radius: 5px !important;
+}
+
+table.bg-blue>thead {
+    background-color: #102c54 !important;
+}
+
+table.bg-blue>thead>tr>th {
+    color: #fff;
+}
+
+tbody td span {
+    cursor: pointer;
+}
+
+
+/* ---------------------
+    ANIMATIONS
+------------------------ */
+
+.form-control:disabled,
+.form-control[readonly] {
+    cursor: not-allowed !important;
+}
+
+button:disabled,
+button.disabled {
+    cursor: not-allowed;
+}
+
+[class*="shadow"] {
+    transition: all 0.15s ease;
+}
