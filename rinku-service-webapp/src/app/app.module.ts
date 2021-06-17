@@ -1,3 +1,4 @@
+import { EmployeeRetrieveComponent } from './components/employees/employee-retrieve/employee-retrieve.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -25,7 +26,8 @@ import { DeliveryComponent } from './components/deliveries/delivery/delivery.com
     MenuComponent,
     DeliveryRetrieveComponent,
     ModalComponent,
-    DeliveryComponent
+    DeliveryComponent,
+    EmployeeRetrieveComponent
   ],
   imports: [
     BrowserModule,

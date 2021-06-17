@@ -17,9 +17,7 @@ export class EmployeeService {
         let headers: HttpHeaders = new HttpHeaders();
         headers = headers.append('uuid', uuidv4());
 
-        return this.httpClient.get<EmployeeModel[]>(`${AppConfig.employeeResource}`, {
-            headers,
-        });
+        return this.httpClient.get<EmployeeModel[]>(`${AppConfig.employeeResource}`, { headers });
     }
 
     /**
@@ -31,6 +29,6 @@ export class EmployeeService {
     public getEmployeeBy(option: string, value: string) {
         let headers: HttpHeaders = new HttpHeaders();
         headers = headers.append('uuid', uuidv4());
-        return this.httpClient.get<EmployeeModel>(`${AppConfig.employeeResource}/${option}/${value}`, { headers });
+        return this.httpClient.get<EmployeeModel[]>(`${AppConfig.employeeResource}/${option}/${value}`, { headers });
     }
 }

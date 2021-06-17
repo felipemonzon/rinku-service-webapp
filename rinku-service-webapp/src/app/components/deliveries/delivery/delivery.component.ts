@@ -70,8 +70,8 @@ export class DeliveryComponent implements OnInit {
   searchEmployee(search: string) {
     search = search.trim();
     if (search.length > 3) {
-      this.employeeService.getEmployeeBy('byEmployee', search).subscribe((data: EmployeeModel) => {
-        this.surename.nativeElement.value = data.firstname + ' ' + data.lastanme;
+      this.employeeService.getEmployeeBy('byEmployee', search).subscribe((data: EmployeeModel[]) => {
+        this.surename.nativeElement.value = data[0].firstname + ' ' + data[0].lastanme;
         this.deliveries.nativeElement.focus();
       });
     }

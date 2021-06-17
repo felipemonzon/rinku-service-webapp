@@ -8,9 +8,7 @@ import { HomeRoutes } from './home-routes';
 import { EmployeeRetrieveComponent } from '../employees/employee-retrieve/employee-retrieve.component';
 
 @NgModule({
-  declarations: [
-    EmployeeRetrieveComponent,
-  ],
+  declarations: [],
   imports: [
     CommonModule,
     RouterModule.forChild(HomeRoutes),

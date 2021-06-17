@@ -13,14 +13,13 @@ export class AppConfig {
     static deliveryRetrieveResource = `${AppConfig.deliveryDomain}/data/`;
     static deliverySaveResource = `${AppConfig.deliveryDomain}/data/`;
 
-    static employeeRetrieveResource = `${AppConfig.employeeDomain}/data/`;
-    static employeeSearchResource = `${AppConfig.employeeDomain}/data`;
-
     static deliveryRetrieve = `${AppConfig.versionPath}${AppConfig.deliveryRetrieveResource}`;
     static deliveryResource = `${AppConfig.versionPath}${AppConfig.deliverySearchResource}`;
     static deliverySave = `${AppConfig.versionPath}${AppConfig.deliverySaveResource}`;
 
-    static employeeResource = `${AppConfig.versionPath}${AppConfig.employeeSearchResource}`;
+    static employeeRetrieveResource = `${AppConfig.employeeDomain}/data/`;
+    static employeeSearchResource = `${AppConfig.employeeDomain}/data`;
+    static employeeResource = `${AppConfig.versionPath}${AppConfig.employeeRetrieveResource}`;
 
     static roleDomain = "/roles";
     static rolRetrieveResource = `${AppConfig.roleDomain}/data/`; 

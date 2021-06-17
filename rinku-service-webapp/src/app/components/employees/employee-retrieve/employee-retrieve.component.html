@@ -1,1 +1,85 @@
-<p>employee-retrieve works!</p>
+<div class="container card shadow-lg mt-3">
+    <div class="col-12 mt-3">
+        <h2 class="title text-center text-capitalize font-weight-bold mt-3">Administración Empleados</h2>
+        <hr>
+        <div class="form-group row">
+            <h2 class="col-12 h5 text-center text-capitalize">Buscar</h2>
+            <hr>
+            <div class="offset-lg-2 col-12 col-lg-8 text-center">
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" class="custom-control-input" id="findAll" name="by" value="findAll" autocomplete="off" [checked]="true" (change)="radioChangeHandler($event)">
+                    <label class="custom-control-label" for="findAll">Buscar Todas</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" class="custom-control-input" id="byEmployee" name="by" value="byEmployee" autocomplete="off" (change)="radioChangeHandler($event)">
+                    <label class="custom-control-label" for="byEmployee">Num.Empleado</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" class="custom-control-input" id="byFirstname" name="by" value="byFirstname" autocomplete="off" (change)="radioChangeHandler($event)">
+                    <label class="custom-control-label" for="byFirstname">Nombre(s):</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" class="custom-control-input" id="byLastname" name="by" value="byLastname" autocomplete="off" (change)="radioChangeHandler($event)">
+                    <label class="custom-control-label" for="byLastname">Apellido(s):</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-lg-3 col-lg-8">
+                <div class="row">
+                    <div class="offset-lg-1 col-lg-6" id="bySearch">
+                        <div class="form-group ">
+                            <input type="text" class="form-control text-center" #search autocomplete="off" [disabled]="true">
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-primary" #btnSearch disabled="disabled" (click)="searchBy()">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-end mb-3 ml-auto">
+                <button type="button" id="btnAdd" class="btn btn-primary mb-1" (click)="openModal()">
+                    <span class="fa fa-plus"></span>
+                </button>
+            </div>
+            <!-- End search -->
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered bg-blue">
+                    <caption>Lista de Empleados</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center text-uppercase">Número Empleado</th>
+                            <th scope="col" class="text-center text-uppercase">Nombre</th>
+                            <th scope="col" class="text-center text-uppercase">Apellidos</th>
+                            <th scope="col" class="text-center text-uppercase">Sueldos</th>
+                            <th scope="col" class="text-center text-uppercase">Rol Asignado</th>
+                            <th scope="col" class="text-center text-uppercase" colspan="2">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngIf="employees.length === 0">
+                            <td colspan="9" class="text-center">No hay Empleados Registradas</td>
+                        </tr>
+                        <tr *ngFor="let employee of employees | slice: (page-1) * pageSize : page * pageSize">
+                            <td class="d-none">{{employee.idEmployee}}</td>
+                            <td class="text-uppercase text-center">{{employee.employeeNumber}}</td>
+                            <td class="text-uppercase text-center">{{employee.firstname}}</td>
+                            <td class="text-uppercase text-center">{{employee.lastanme}}</td>
+                            <td class="text-uppercase text-center">{{employee.salary}}</td>
+                            <td class="text-uppercase text-center">{{employee.rolDescription}}</td>
+                            <td class="text-center">
+                                <span class="fa fa-edit text-primary mr-4 btnUpdate" (click)="updateEmployee(employee.employeeNumber)"></span>
+                                <span class="fa fa-trash text-danger btnDelete" (click)="deleteEmployee(employee.employeeNumber)"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ngb-pagination class="d-flex justify-content-center font-weight-bold" [(page)]="page" [pageSize]="pageSize" [collectionSize]="employees.length"></ngb-pagination>
+            </div>
+        </div>
+    </div>
+</div>

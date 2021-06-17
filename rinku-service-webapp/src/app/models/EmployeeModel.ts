@@ -7,4 +7,5 @@ export interface EmployeeModel {
     idType: number;
     idStatus: number;
     idRol: number;
+    rolDescription: string;
 }
